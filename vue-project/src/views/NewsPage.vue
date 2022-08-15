@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 export default {
   computed: {
     news() {
@@ -16,21 +16,31 @@ export default {
     },
   },
 };
-</script> -->
+</script>
 
 <template>
-  <p>this is News page</p>
-  <!-- <div class="flex flex-wrap">
-    <div class="news-card p-3 m-3" v-for="item of news[0].articles" :key="item.title">
-      <h2 class="font-bold">{{ item.title }}</h2>
-      <p>{{ item.description }}</p>
+  <h2 class="py-8 text-center font-medium text-4xl uppercase">this is News page</h2>
+  <div class="container mx-auto">
+    <div class="flex flex-wrap justify-center">
+      <a
+        v-for="item of news[0].articles"
+        :key="item.title"
+        :href="item.url"
+        class="news-card p-3 m-3 border-2 border-neutral-400 rounded 2xl:w-1/6 lg:w-1/4 md:w-1/3 w-full bg-gray-50 hover:drop-shadow-xl"
+        target="_blank"
+      >
+        <div class="flex justify-center">
+          <img :src="item.urlToImage" alt="news image" class="h-32" />
+        </div>
+        <h3 class="font-bold py-3">{{ item.title }}</h3>
+        <p class="text-sm">{{ item.description }}</p>
+      </a>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .news-card {
-  height: 400px;
-  width: 200px;
+  min-height: 250px;
 }
 </style>

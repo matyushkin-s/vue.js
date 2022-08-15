@@ -1,6 +1,6 @@
 <template>
   <div class="home-page flex flex-col justify-center items-center">
-    <h1 class="py-4 text-center text-2xl">
+    <h1 class="py-4 text-center font-medium text-4xl uppercase">
       Hey there!<br />
       Welcome to my vue test project
     </h1>

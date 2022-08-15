@@ -8,8 +8,6 @@ export const store = createStore({
   },
   mutations: {
     addNewsToNewsList(state, newsItem) {
-      console.log(newsItem);
-
       state.newsList.push(newsItem);
     },
   },
