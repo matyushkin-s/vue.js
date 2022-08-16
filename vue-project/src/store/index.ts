@@ -4,6 +4,7 @@ export const store = createStore({
   state() {
     return {
       newsList: [],
+      userData: [{ login: "admin", pass: "12345" }],
     };
   },
   mutations: {

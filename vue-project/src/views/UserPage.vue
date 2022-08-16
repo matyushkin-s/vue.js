@@ -1,7 +1,15 @@
+<script lang="ts">
+import Login from "./../components/Login.vue";
+
+export default {
+  components: {
+    Login,
+  },
+};
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is a Login page</h1>
-  </div>
+  <Login />
 </template>
 
 <style lang="scss" scoped></style>
