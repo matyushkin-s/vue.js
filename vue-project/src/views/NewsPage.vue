@@ -1,4 +1,4 @@
-<!-- <script lang="ts">
+<script lang="ts">
 export default {
   computed: {
     news() {
@@ -16,12 +16,12 @@ export default {
     },
   },
 };
-</script> -->
+</script>
 
 <template>
   <h2 class="py-8 text-center font-medium text-3xl sm:text-4xl uppercase">this is News page</h2>
-  <!-- <div class="container mx-auto">
-    <div class="flex flex-wrap justify-center">
+  <div class="container mx-auto">
+    <div v-if="news[0]" class="flex flex-wrap justify-center">
       <a
         v-for="item of news[0].articles"
         :key="item.title"
@@ -36,7 +36,7 @@ export default {
         <p class="text-sm overflow-hidden">{{ item.description }}</p>
       </a>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <style lang="scss" scoped>

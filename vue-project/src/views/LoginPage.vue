@@ -1,3 +1,36 @@
+<script lang="ts">
+export default {
+  data() {
+    return {
+      userName: "",
+      userPass: "",
+      saveUser: false,
+    };
+  },
+  methods: {
+    saveUserLogin() {
+      if (this.saveUser) {
+        this.$store.dispatch("saveUserToken");
+      }
+    },
+
+    checkUserLogin() {
+      const { login, pass } = this.$store.state.userData;
+
+      if (this.userName === login && this.userPass === pass) {
+        this.$store.dispatch("loginUser");
+        this.saveUserLogin();
+        this.$router.push("user");
+
+        return;
+      }
+
+      this.$router.push("LoginError");
+    },
+  },
+};
+</script>
+
 <template>
   <div class="container mx-auto pt-9">
     <div class="flex justify-center lg:justify-between content-center">
@@ -14,6 +47,7 @@
           type="text"
           id="userName"
           placeholder="Enter your user name"
+          v-model="userName"
         />
         <label class="block pt-10 pb-2" for="userPass">Password</label>
         <input
@@ -21,18 +55,27 @@
           type="password"
           id="userPass"
           placeholder="Enter your Password"
+          v-model="userPass"
         />
         <div class="flex justify-between pb-10 pt-6">
           <div class="text-sm font-normal flex justify-between items-center">
-            <input type="checkbox" name="rememberUser" id="rememberUser" />
+            <input type="checkbox" name="rememberUser" id="rememberUser" v-model="saveUser" />
             <span class="pl-1">Remember me</span>
           </div>
           <a class="text-sm font-normal" href="#">Forgot password?</a>
         </div>
-        <button class="py-4 bg-black text-white w-full rounded-md" type="submit">Login</button>
+        <button
+          class="py-4 bg-black text-white w-full rounded-md"
+          type="submit"
+          @click.stop.prevent="checkUserLogin"
+        >
+          Login
+        </button>
         <p class="pt-8 text-center">Don’t have an Account ? <a href="#">Register</a></p>
       </form>
-      <img class="hidden lg:block" src="./../assets/img/people.svg" alt="talking people" />
+      <div class="w-full hidden lg:flex justify-center items-center pl-9">
+        <img src="./../assets/img/people.svg" alt="talking people" />
+      </div>
     </div>
   </div>
 </template>

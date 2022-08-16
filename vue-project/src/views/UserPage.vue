@@ -1,15 +1,9 @@
-<script lang="ts">
-import Login from "./../components/Login.vue";
-
-export default {
-  components: {
-    Login,
-  },
-};
-</script>
+<script lang="ts"></script>
 
 <template>
-  <Login />
+  <h2 class="py-8 text-center font-medium text-xl sm:text-2xl uppercase">
+    Some protected user data here
+  </h2>
 </template>
 
 <style lang="scss" scoped></style>

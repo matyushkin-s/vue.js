@@ -1,9 +1,9 @@
 <script lang="ts"></script>
 
 <template>
-  <header>
-    <nav class="h-full px-12 flex justify-between items-center shadow-md">
-      <RouterLink to="/">Home / Logo</RouterLink>
+  <header class="w-full shadow-md">
+    <nav class="container mx-auto h-full px-6 flex justify-between items-center">
+      <RouterLink to="/">Your Logo</RouterLink>
       <RouterLink to="/news">News</RouterLink>
       <RouterLink to="/user">User</RouterLink>
     </nav>
@@ -14,8 +14,10 @@
 @import "./../assets/variables.scss";
 
 header {
-  width: 100%;
   height: $header-height;
   color: black;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
 }
 </style>
