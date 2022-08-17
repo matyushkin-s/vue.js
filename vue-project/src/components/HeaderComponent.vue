@@ -1,5 +1,3 @@
-<script lang="ts"></script>
-
 <template>
   <header class="w-full shadow-md">
     <nav class="container mx-auto h-full px-6 flex justify-between items-center">

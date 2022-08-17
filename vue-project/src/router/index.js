@@ -3,7 +3,7 @@ import HomePage from "../views/HomePage.vue";
 import UserPage from "../views/UserPage.vue";
 import LoginPage from "../views/LoginPage.vue";
 import NewsPage from "../views/NewsPage.vue";
-import { store } from "./../store/index";
+import { store } from "../store/index";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
